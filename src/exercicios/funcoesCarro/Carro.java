@@ -1,13 +1,13 @@
 package exercicios.funcoesCarro;
 
 public class Carro {
-    String nome;
-    String modelo;
-    int marcha_maxima = 6;
-    int marcha_minima = 0;
-    int marchaAtual = 0;
-    double velocidade = 0.0;
-    boolean ligado = false;
+    private String nome;
+    private String modelo;
+    private int marcha_maxima = 6;
+    private int marcha_minima = 0;
+    private int marchaAtual = 0;
+    private double velocidade = 0.0;
+    private boolean ligado = false;
 
     public Carro(String nome, String modelo) {
         this.nome = nome;
@@ -66,10 +66,7 @@ public class Carro {
             System.out.println("Velocidade atual: " + velocidade + " km/h, marcha: " + marchaAtual);
         } else {
             System.out.println("A velocidade não é compatível com a marcha atual!");
-            if (velocidade > 0) {
-                velocidade = 0;
-                System.out.println("Reduzindo a velocidade para 0 km/h.");
-            }
+            
         }
     }
 
@@ -152,14 +149,10 @@ public class Carro {
 
     @Override
     public String toString() {
-        return "Carro{" +
-                "nome='" + nome + '\'' +
-                ", modelo='" + modelo + '\'' +
-                ", marcha_maxima=" + marcha_maxima +
-                ", marcha_minima=" + marcha_minima +
-                ", marchaAtual=" + marchaAtual +
-                ", velocidade=" + velocidade +
-                ", ligado=" + ligado +
-                '}';
+        return "Carro: " + nome + " | Modelo: " + modelo +
+                "\nStatus: " + (ligado ? "Ligado" : "Desligado") +
+                "\nMarcha atual: " + marchaAtual +
+                "\nVelocidade: " + velocidade + " km/h";
     }
+
 }
